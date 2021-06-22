@@ -19,7 +19,7 @@ const pool = new Pool({
   API Routes
 ===================*/
 router.get("/", (req, res) => {
-  const sql = "SELECT task_id, task_title FROM public.tasks order by 1"; 
+  const sql = "SELECT task_id as key, task_title FROM public.tasks order by 1"; 
       pool.query(sql,[], (err, result) => {
       var message = "";
       var data = {};
